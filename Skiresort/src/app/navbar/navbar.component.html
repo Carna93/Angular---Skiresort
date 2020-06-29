@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['home']">Home</a>
+            </li>
+            <li class="nav-item active" *ngFor="let item of Skiresort?.skiresortList">
+                <a class="nav-link" [routerLink]="['skiresorts', item?._id]">{{item.name}}</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['about']">About</a>
+            </li>
+        </ul>
+    </div>
+</nav>

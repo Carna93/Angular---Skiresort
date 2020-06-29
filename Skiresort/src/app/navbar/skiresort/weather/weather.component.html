@@ -1,0 +1,9 @@
+<div class="row">
+    <div class="col">
+        <p style="font-weight: bold;">{{weather?.date | date: 'd.M.yyyy.'}}</p>
+        <img src="assets/images/weather/{{weather?.outlook}}.png">
+        <p>Min: {{weather?.temperature_min}} &#8451;</p>
+        <p>Max: {{weather?.temperature_max}} &#8451;</p>
+        <p>Wind: {{weather?.wind}} km/h</p>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col">
+        <app-skiresort-list [skiresort]="Skiresort"></app-skiresort-list>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <ngb-tabset #t="ngbTabset">
+            <ngb-tab id="tab-selectbyid1" title="Tracks">
+              <ng-template ngbTabContent>
+                <p>
+                    <app-tracks [tracks]="Tracks" (changeSort)="updateCriteria($event)"></app-tracks>
+                </p>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab id="tab-selectbyid2" title="Weather">
+                <ng-template ngbTabContent>
+                  <div class="row">
+                    <div class="col-3" *ngFor="let item of Weather?.weatherList">
+                      <app-weather [weather]="item"></app-weather>
+                    </div>
+                  </div>                    
+                </ng-template>
+              </ngb-tab>
+              <ngb-tab id="tab-selectbyid3" title="Ski pass">
+                <ng-template ngbTabContent>
+                  <p>
+                      <app-skipass [skipass]="Skipass" (newReservation)="saveNewReservation($event)"></app-skipass>
+                  </p>
+                </ng-template>
+              </ngb-tab>
+          </ngb-tabset>
+    </div>
+</div>
